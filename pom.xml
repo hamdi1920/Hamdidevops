@@ -17,6 +17,12 @@
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     </properties>
+      <distributionManagement>
+  <repository>
+   <id>nexus</id>
+   <url>http://192.168.10.33:8081/repository/123/</url>
+  </repository>
+ </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -94,6 +100,10 @@
 
     <build>
         <plugins>
+                 <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-deploy-plugin</artifactId>
+   </plugin> 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
