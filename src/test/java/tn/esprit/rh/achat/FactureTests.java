@@ -48,7 +48,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 @DataJpaTest 
 
 @SpringBootTest
-public class test {
+public class FactureTests {
 	@Mock
 	StockRepository StockRepo;
 	@InjectMocks
