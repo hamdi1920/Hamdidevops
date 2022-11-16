@@ -1,35 +1,21 @@
-version: "3"
+version: '3'
 
 services:
-  mysqldb:
+  docker-mysql:
     image: mysql:5.7
-    restart: unless-stopped
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      - MYSQL_DATABASE=test
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=xa
+      - MYSQL_PASSWORD=password
     ports:
-      - "4000:3306"
-    volumes:
-      - db:/var/lib/mysql
-  app:
-    depends_on:
-      - mysqldb
-    image: 'yasminelayes/achatrepo:yass'
-    build:
-      context: .
+      - 3308:3306
 
-    restart: on-failure
+  app:
+    image: hamdi20/springbootimage3.0
     ports:
-      - "8089:8089"
+       - 8089:8089
     environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/test?useSSL=false",
-        "spring.datasource.username" : "root",
-        "spring.datasource.password" : "",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
-    stdin_open: true
-    tty: true
-volumes:
-  db:
+      SPRING_DATASOURCE_URL: jdbc:mysql://192.168.10.17:3306/test?autoReconnect=true&useSSL=false
+    depends_on:
+       - docker-mysql
