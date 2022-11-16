@@ -25,6 +25,7 @@ import tn.esprit.rh.achat.repositories.*;
 import tn.esprit.rh.achat.services.*;
 
 @ExtendWith(MockitoExtension.class)
+@RunWith(MockitoJUnitRunner.Silent.class)
 public class FactureTests {
 	
 		@Mock
