@@ -12,7 +12,7 @@ services:
       - 3308:3306
 
   app:
-    image: hamdi20/springbootimage3.0
+    image: hamdi20/imagespring
     ports:
        - 8089:8089
     environment:
