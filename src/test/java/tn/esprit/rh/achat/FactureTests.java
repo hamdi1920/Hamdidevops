@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import org.junit.runner.RunWith;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +24,6 @@ import tn.esprit.rh.achat.repositories.*;
 import tn.esprit.rh.achat.services.*;
 
 @ExtendWith(MockitoExtension.class)
-@RunWith(MockitoJUnitRunner.Silent.class)
 public class FactureTests {
 	
 		@Mock
@@ -36,7 +34,7 @@ public class FactureTests {
     @Order('1')
     public void Add() 
     {
-    	StockRepository StockRepo;
+    	
     	//StockServiceImpl ss=mock(StockServiceImpl.class);
     	Stock st =  new Stock();
 		st.setLibelleStock("gjhgjh");
