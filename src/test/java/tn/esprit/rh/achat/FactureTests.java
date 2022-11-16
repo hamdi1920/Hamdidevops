@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
+import org.junit.runner.RunWith;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
