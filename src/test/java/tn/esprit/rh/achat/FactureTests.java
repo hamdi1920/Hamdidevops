@@ -42,8 +42,8 @@ public class FactureTests {
 		st.setQteMin(10);
 		st.setIdStock((long) 4);
 		when(ss.addStock(st)).thenReturn(st);
-		assertNotEquals(st.getIdStock(), null);
-        System.out.print(ss.addStock(st).getIdStock());
+	//	assertNotEquals(st.getIdStock(), null);
+       // System.out.print(ss.addStock(st).getIdStock());
     }
 	
 	
